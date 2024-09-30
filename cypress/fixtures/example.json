@@ -1,0 +1,7 @@
+{
+  "name": "Using fixtures to represent data",
+  "email": "hello@cypress.io",
+  "body": "Fixtures are a great way to mock data for responses to routes",
+  "test:dev": "cypress run --config-file cypress.config.dev.js",
+  "test:prod": "cypress run --config-file cypress.config.prod.js"
+}
