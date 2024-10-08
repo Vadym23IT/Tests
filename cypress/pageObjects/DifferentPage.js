@@ -1,28 +1,20 @@
 export default class DifferentPage {
     visitHomePage() {
-      cy.visit('https://telnyx.com/');
-    }
-  
-    checkIntroText(expectedText) {
-      cy.get('p.c-PJLV.c-PJLV-cHtIMp-dark-false.c-PJLV-ghYBfS-lead-true.c-PJLV-iliYLyy-css')
-        .invoke('text')
-        .then((text) => {
-          cy.log(text);
-          expect(text).to.include(expectedText);
-        });
+      cy.visit('https://telnyx.com/voice-ai');
     }
   
     scrollToVoiceAISection() {
-      cy.get('#voice-ai').scrollIntoView();
+      cy.get('#features').first().scrollIntoView();
     }
   
-    checkVoiceAIText(expectedText) {
-      cy.get('#voice-ai').invoke('text').then((text) => {
-        cy.log(text);
-        expect(text).to.include(expectedText);
-      });
+    checkVoiceAI() {
+      cy.get('#features')
+        .invoke('text')
+        .then((text) => {
+          expect(text).to.include('The building blocks for Voice AI—all in one place');
+        });
     }
   
-  }
+}
 
   

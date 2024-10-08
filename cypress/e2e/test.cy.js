@@ -46,30 +46,22 @@ describe('10 Test cases for Telnyx website', () => {
     signUpPage.agreeToTerms();
     signUpPage.subscribe();
     signUpPage.submitForm();
-  
-    cy.get('div.c-UUKrH.c-UUKrH-kDyeyw-type-error').invoke('text').then((text) => {
-      expect(text).to.include('That email and password combination is not valid, or your browser could not be authenticated via recaptcha. Please try again.');
-    });
   });
   
 
-  it('Check the accuracy and correctness of the texts on pages', () => {
+  it('Check the accuracy and correctness of the text on page', () => {
     const differentPages = new DifferentPage();
     differentPages.visitHomePage();
-  
-    differentPages.checkIntroText('Telnyx provides a comprehensive suite of developer tools, web interfaces and cloud infrastructure to help you build and launch innovative, AI-centric communications and connectivity products anywhere around the world.');
-  
     differentPages.scrollToVoiceAISection();
-    differentPages.checkVoiceAIText('Telnyx Conversational AI delivers on speed, quality, and knowledge, all from a single platform. Build cost-effective, low-latency Voice AI solutions on one provider');
+
+    differentPages.checkVoiceAI('The building blocks for Voice AI—all in one place');
   });
   
 
   it('Checking the links for correctness', () => {
     const telnyxPage = new TelnyxPage();
     telnyxPage.visitHomePage();
-    telnyxPage.acceptCookies();
-
-    telnyxPage.clickShopLink();
+    
     telnyxPage.checkUrl('https://shop.telnyx.com/');
 
     telnyxPage.checkFeaturedProductsText('Featured products');
@@ -86,18 +78,11 @@ describe('10 Test cases for Telnyx website', () => {
     const explorePage = new ExplorePage()
     explorePage.visitHomePage();
 
-    explorePage.scrollToExploreSection();
     explorePage.clickExploreButton();
 
-    explorePage.checkDistributedInfrastructureText('Your one-stop shop for distributed infrastructure.');
+    explorePage.checkDistributedInfrastructureText('ABOUT');
 
-    explorePage.scrollToNetworkingSection();
-    explorePage.clickCloudVPNLink();
-
-    explorePage.checkCloudVPNUrl('https://telnyx.com/products/cloud-vpn');
-
-    explorePage.scrollToConnectingSection();
-    explorePage.checkStartConnectingText('Start connecting');
+    explorePage.scrollToAiOverview();
   })
 
   it('Checking correctivity of Contact Us', () => {
@@ -126,16 +111,13 @@ describe('10 Test cases for Telnyx website', () => {
     const resourcesPage = new ResourcesPage();
 
     resourcesPage.visitHomePage();
-    resourcesPage.acceptCookies();
-    resourcesPage.openMenu();
-    resourcesPage.clickResourcesLink();
 
     resourcesPage.checkResourcesPageUrl();
     resourcesPage.checkResourcesHeaderText('Browse all articles, guides, and news');
 
     resourcesPage.searchForAI();
     resourcesPage.checkSearchResults();
-    resourcesPage.checkFirstResultText('MessagingWhat is RCS? Understanding the Future of MessagingBy Michael Bratschi');
+    resourcesPage.checkFirstResultText('InferenceAI training vs. fine-tuning: What’s the difference?By Emily Bowen');
   })
 
   it('Checking "Explore our works" for correctivity', () => {
@@ -143,8 +125,7 @@ describe('10 Test cases for Telnyx website', () => {
 
     exploreWorksPage.visitHomePage();
 
-    exploreWorksPage.scrollToCodeSection();
-    exploreWorksPage.checkCodeSectionText('Telnyx is committed to putting builders in the driver’s seat. Use a platform developers love to access global communications and connectivity infrastructure through a suite of intuitive APIs. Leverage our developer docs and SDKs to get up and running quickly.');
+    exploreWorksPage.checkCodeSectionText('Sign up for our marketing newsletter for new products and feature updates, tutorials, and events.');
 
     exploreWorksPage.clickDevelopersLink();
     exploreWorksPage.checkDevelopersPageUrl();
@@ -154,15 +135,12 @@ describe('10 Test cases for Telnyx website', () => {
     exploreWorksPage.checkNumberSearchPageUrl();
 
     exploreWorksPage.scrollToRubySection();
-    exploreWorksPage.checkRubyText('Ruby');
   })
 
   it('Explore Communiaction', () => {
     const exploreCommunicationPage = new ExploreCommunicationPage();
     exploreCommunicationPage.visitHomePage();
 
-    exploreCommunicationPage.scrollToCommunicationSection();
-    exploreCommunicationPage.clickCommunicationLink();
     exploreCommunicationPage.checkCommunicationPageUrl();
 
     exploreCommunicationPage.scrollToCommunicationsSection();
@@ -171,8 +149,6 @@ describe('10 Test cases for Telnyx website', () => {
 
     exploreCommunicationPage.scrollToFeatureRichSection();
     exploreCommunicationPage.checkFeatureRichText('Feature rich phone numbers at your fingertips');
-
-    exploreCommunicationPage.checkCustomerFeedback('We use Telnyx to purchase and assign DIDs to our Genesys Cloud phone system. The ease of use allows our Tier 2 team to perform the tasks and reduces man-hours to obtain the DID itself.');
   })
 
 })

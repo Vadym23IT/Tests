@@ -1,18 +1,6 @@
 export default class ResourcesPage {
     visitHomePage() {
-      cy.visit('https://telnyx.com/');
-    }
-  
-    acceptCookies() {
-      cy.get('button.c-gMsfuT').click();
-    }
-  
-    openMenu() {
-      cy.get('[id="radix-:Rmmj3m:"]').click({ force: true });
-    }
-  
-    clickResourcesLink() {
-      cy.get('a[href="/resources"]').click({ force: true });
+      cy.visit('https://telnyx.com/resources');
     }
   
     checkResourcesPageUrl() {

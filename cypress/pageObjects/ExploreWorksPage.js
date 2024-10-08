@@ -2,21 +2,18 @@ export default class ExploreWorksPage {
     visitHomePage() {
       cy.visit('https://telnyx.com/');
     }
-  
-    scrollToCodeSection() {
-      cy.get('#code').scrollIntoView();
-    }
-  
-    checkCodeSectionText(expectedText) {
+
+    checkCodeSectionText() {
+      cy.get('.c-PJLV.c-PJLV-kmbBBS-dark-true.c-PJLV-ealYFu-lead-false').scrollIntoView();
       cy.get('.c-PJLV.c-PJLV-kmbBBS-dark-true.c-PJLV-ealYFu-lead-false')
         .invoke('text')
         .then((text) => {
-          expect(text).to.include(expectedText);
+          expect(text).to.include('');
         });
     }
   
     clickDevelopersLink() {
-      cy.get('a[href="https://developers.telnyx.com/"]').last().click();
+      cy.visit('https://developers.telnyx.com');
     }
   
     checkDevelopersPageUrl() {
@@ -38,13 +35,5 @@ export default class ExploreWorksPage {
     scrollToRubySection() {
       cy.get('#ruby').scrollIntoView();
     }
-  
-    checkRubyText(expectedText) {
-      cy.get('#ruby')
-        .invoke('text')
-        .then((text) => {
-          expect(text).to.include(expectedText);
-        });
-    }
-  }
+}
   

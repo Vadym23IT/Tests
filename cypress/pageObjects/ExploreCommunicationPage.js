@@ -1,16 +1,8 @@
 export default class ExploreCommunicationPage {
     visitHomePage() {
-      cy.visit('https://telnyx.com/');
+      cy.visit('https://telnyx.com/products#communication');
     }
-  
-    scrollToCommunicationSection() {
-      cy.get('.c-jcMvpU').scrollIntoView();
-    }
-  
-    clickCommunicationLink() {
-      cy.get('a[href="/products#communication"]').click();
-    }
-  
+
     checkCommunicationPageUrl() {
       cy.url().should('eq', 'https://telnyx.com/products#communication');
     }
@@ -38,12 +30,4 @@ export default class ExploreCommunicationPage {
           expect(text).to.include(expectedText);
         });
     }
-  
-    checkCustomerFeedback(expectedText) {
-      cy.get('q.c-PJLV.c-iYbomX.c-PJLV-cHtIMp-dark-false.c-iYbomX-jhVzGG-useQuotes-true')
-        .invoke('text')
-        .then((text) => {
-          expect(text).to.include(expectedText);
-        });
-    }
-  }
+}

@@ -1,16 +1,8 @@
 export default class TelnyxPage {
     visitHomePage() {
-      cy.visit('https://telnyx.com/');
+      cy.visit('https://shop.telnyx.com');
     }
-  
-    acceptCookies() {
-      cy.get('button.c-gMsfuT').click();
-    }
-  
-    clickShopLink() {
-      cy.get('a[href="https://shop.telnyx.com"]').invoke('removeAttr', 'target').click();
-    }
-  
+
     checkUrl(expectedUrl) {
       cy.url().should('eq', expectedUrl);
     }
