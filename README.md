@@ -10,26 +10,28 @@ This repository contains automated tests for the Telnyx website using Cypress. T
 6.Reporting
 
 1.Getting Started
+
 These instructions will help you set up and run the project on your local machine for testing purposes.
 
 2.Prerequisites
+
 Before running the tests, ensure you have the following installed:
+
 Node.js
 Cypress
 
 3.Installation
 
 Clone the repository:
+
 git clone https://github.com/your-repo/telnyx-tests.git
-
-Navigate to the project directory:
 cd Tests1
-
-Install the necessary dependencies:
 npm install
 
 4.Running Tests
+
 To run the tests in Cypress, use the following command:
+
 npm run cypress:open
 This will open the Cypress test runner, where you can select and run individual test cases.
 
