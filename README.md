@@ -3,10 +3,15 @@
 This repository contains automated tests for the Telnyx website using Cypress. The tests cover various features and pages of the website to ensure functionality, accuracy, and correctness.
 
 1.Getting Started
+
 2.Prerequisites
+
 3.Installation
+
 4.Running Tests
+
 5.Test Cases
+
 6.Reporting
 
 1.Getting Started
