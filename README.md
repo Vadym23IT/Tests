@@ -30,7 +30,7 @@ Cypress
 
 Clone the repository:
 
-git clone https://github.com/your-repo/telnyx-tests.git
+git clone https://github.com/Vadym23IT/Tests.git
 
 cd Tests1
 
