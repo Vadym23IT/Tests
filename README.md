@@ -23,6 +23,7 @@ These instructions will help you set up and run the project on your local machin
 Before running the tests, ensure you have the following installed:
 
 Node.js
+
 Cypress
 
 3.Installation
@@ -30,7 +31,9 @@ Cypress
 Clone the repository:
 
 git clone https://github.com/your-repo/telnyx-tests.git
+
 cd Tests1
+
 npm install
 
 4.Running Tests
@@ -38,12 +41,15 @@ npm install
 To run the tests in Cypress, use the following command:
 
 npm run cypress:open
+
 This will open the Cypress test runner, where you can select and run individual test cases.
 
 Alternatively, to run all tests in headless mode:
+
 npm run cypress:run
 
 5. Test Cases
+   
 The project contains 10 test cases designed to check various aspects of the Telnyx website. These include:
 
 Loading the homepage and checking for specific text ("OUR NETWORK").
@@ -58,4 +64,5 @@ Verifying the "Explore our works" section.
 Exploring communication-related features.
 
 6. Reporting
+   
 After running the tests, reports will be generated in the GitHub Actions. You can view detailed results, if any tests fail.
