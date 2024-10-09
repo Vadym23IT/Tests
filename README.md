@@ -20,6 +20,7 @@ cd Tests
 
 Install the dependencies:
 
+```bash
 npm install
 
 Running Tests
